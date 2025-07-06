@@ -37,7 +37,7 @@ class DataTransformation:
             num_pipeline=Pipeline(
                 steps=[
                     ("imputer",SimpleImputer(strategy="median")), # replace missing values with median
-                    ("scaler",StandardScaler())
+                    ("scaler",StandardScaler(with_mean=False))
                 ]
             )
 
@@ -45,7 +45,7 @@ class DataTransformation:
                 steps=[
                     ("imputer",SimpleImputer(strategy="most_frequent")), # replace missing values with mode
                     ("one_hot_encoder",OneHotEncoder()), # we have less no. of category features so we are using OHEncoder
-                    ("scaler",StandardScaler())
+                    ("scaler",StandardScaler(with_mean=False))
                 ]
             )
 
