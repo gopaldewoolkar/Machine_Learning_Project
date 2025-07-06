@@ -37,7 +37,7 @@ class DataTransformation:
             num_pipeline=Pipeline(
                 steps=[
                     ("imputer",SimpleImputer(strategy="median")), # replace missing values with median
-                    ("scaler",StandardScaler(with_mean=False))
+                    ("scaler",StandardScaler())
                 ]
             )
 
